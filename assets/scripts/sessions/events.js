@@ -66,7 +66,7 @@ const onGetSessions = event => {
         // elementSessionEntry.setAttribute('class', 'session-entry-element') // 3.
         document.getElementById('sessions-info').appendChild(elementSessionEntry) // 4.
         // removed result.sessions[i].notes from concatenation
-        document.getElementById('session-entry-' + i).innerHTML = 'session ID: ' + result.sessions[i].id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + result.sessions[i].date + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].hours_worked_readable + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].hours_recorded_readable + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].notes// 5.
+        document.getElementById('session-entry-' + i).innerHTML = 'session ID: ' + result.sessions[i].id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + 'project ID: ' + result.sessions[i].project_id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + result.sessions[i].date + ' .' + '.' + '.' + '.' + '. ' + 'hrs worked: ' + result.sessions[i].hours_worked_readable + ' .' + '.' + '.' + '.' + '. ' + 'hrs recorded: ' + result.sessions[i].hours_recorded_readable + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].notes// 5.
       }
     })
     // change 'error =>' to '() =>' to prevent linter error
