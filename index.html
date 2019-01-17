@@ -175,7 +175,33 @@
           </div>
         </div>
 
-        <!-- DELETE DIALOG MODAL BEGINS -->
+        <!-- UPDATE PROJECT MODAL BEGINS -->
+        <div class="modal fade" id="updateProjectModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateProjectModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="update-project">
+                    <fieldset>
+                      <legend>update</legend>
+                      <input name="project[id]" type="text"  placeholder="ID #">
+                      <input name="project[name]" type="text"  placeholder="project name">
+                      <input name="project[description]" type="text"  placeholder="project description">
+                        <br>
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DELETE PROJECT MODAL BEGINS -->
         <div class="modal fade" id="deleteProjectModal">
           <div class="modal-dialog">
             <div class="modal-content">
