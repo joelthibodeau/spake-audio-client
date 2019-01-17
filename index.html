@@ -38,6 +38,8 @@
 
           <span><button id="entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#projectEntriesModal">projects</button></span>
           <span> • </span>
+          <span><button id="session-entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#sessionEntriesModal">sessions</button></span>
+          <span> • </span>
           <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteProjectModal">delete project</button></span>
           <span> • </span>
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#changePasswordModal">account</button></span>
@@ -244,6 +246,33 @@
           </div>
         </div> -->
 
+        <!-- CREATE SESSION MODAL BEGINS -->
+        <div class="modal fade" id="newSessionModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newSessionModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="create-session">
+                    <fieldset>
+                      <legend>create session</legend>
+                        <input name="session[project_id]" type="number"  placeholder="project id">
+                        <input name="session[date]" type="text"  placeholder="date">
+                        <input name="session[hours_worked]" type="number"  placeholder="0.00">
+                        <input name="session[hours_recorded]" type="number"  placeholder="0.00">
+                        <input name="session[notes]" type="text"  placeholder="notes">                        <br>
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
         <!-- SESSION ENTRIES MODAL BEGINS -->
         <div class="modal fade" id="sessionEntriesModal">
           <div class="modal-dialog">
@@ -255,7 +284,7 @@
                 </button>
               </div>
                 <div class="modal-body">
-                  <legend>projects</legend>
+                  <legend>sessions</legend>
                   <div id='sessions-info' class='sessions-info'></div>
                </div>
 

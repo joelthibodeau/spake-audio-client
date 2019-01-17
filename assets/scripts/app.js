@@ -7,11 +7,13 @@
 // require('./example')
 const authEvents = require('./auth/events.js')
 const projectEvents = require('./projects/events.js')
+const sessionEvents = require('./sessions/events.js')
 
 $(() => {
   // your JS code goes here
   authEvents.addAuthHandlers()
   projectEvents.addProjectHandlers()
+  sessionEvents.addSessionHandlers()
 
   $('body').on('hidden.bs.modal', '.modal', function () {
     $(this).find('input[type="text"], input[type="password"],textarea,select').each(function () {

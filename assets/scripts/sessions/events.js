@@ -75,10 +75,10 @@ const onGetSessions = event => {
     })
 }
 const addSessionHandlers = () => {
-  $('#create-project').on('submit', onCreateSession)
-  $('#update-project').on('submit', onUpdateSession)
-  $('#delete-project').on('submit', onDeleteSession)
-  $('#entries-button').on('click', onGetSessions)
+  $('#create-session').on('submit', onCreateSession)
+  $('#update-session').on('submit', onUpdateSession)
+  $('#delete-session').on('submit', onDeleteSession)
+  $('#session-entries-button').on('click', onGetSessions)
 }
 
 // NEED TO CREATE NEW FUNCTION FOR CREATING NEW AUTH HANDLERS
