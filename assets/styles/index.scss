@@ -1,1 +1,53 @@
 @import '~bootstrap/scss/bootstrap';
+
+$darker-green: #2e7e19;
+$mint-green: #eaf2e8;
+$tritanopia: #bc8b8b;
+$achromatomaly: #b0a591;
+$dim-grey: #696969;
+$failure-red: #f00;
+$success-green: #008000;
+
+$lighter-green: #d5e5d1;
+// dial0gs colors
+// $dark-putty: #686256;
+// $orange-red: #c1502e;
+// $dim-teal: #587e76;
+// $rouge: #a96e5b;
+
+body {
+  background-color: #eaf2e8;
+  color: #2e7e19;
+  font-family: 'Questrial', sans-serif;
+  margin-top: 45px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-signup {
+  background-color: $darker-green;
+  border: solid $mint-green;
+  border-radius: 8px;
+  color: $mint-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+  width: 75px;
+
+  &:hover {
+    background-color: $lighter-green;
+    border: solid $lighter-green;
+    border-radius: 8px;
+    color: $mint-green;
+    cursor: pointer;
+    width: 75px;
+  }
+}

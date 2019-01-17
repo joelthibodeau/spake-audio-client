@@ -48,18 +48,15 @@ const signInSuccess = data => {
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const signInFailure = () => {
+const signInFailure = error => {
   $('.message').text('error on sign in')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  // console.error('signInFailure ran. Error is :', error)
+  console.error('signInFailure ran. Error is :', error)
   emptyMessage()
 }
 
 const changePasswordSuccess = data => {
-  // console.log('changedPasswordSuccess ran. Data is:', data)
-  // console.log below was causing user facing error message, despite 204
-  // console.log(data.user.token)
   // clears form text and password ellipses on sign in success.
   $('#change-password').find('input:password').val('')
   // close modal on change password success
@@ -93,7 +90,7 @@ const signOutSuccess = data => {
   emptyMessage()
 }
 
-// change 'error =>' to '() =>' to prevent linter error
+// change '= error =>' to '() =>' to prevent linter error
 const signOutFailure = error => {
   $('.message').text('error on sign out')
   $('.message').attr('class', 'message')
@@ -111,6 +108,4 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure
-  // createDialogSuccess,
-  // createDialogFailure
 }

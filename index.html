@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>SPAKE</title>
+      <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -17,31 +20,30 @@
       </div>
 
       <div class="buttons-container">
-      <!-- <div class="sign-up"></div> -->
+
         <div id="signed-out">
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signUpModal">sign up</button></span>
           <span> • </span>
-          <!-- <span><button class="reset">reset</button></span>
-          <span> | </span> -->
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signInModal">sign in</button></span>
         </div>
         <div id="signed-in">
-          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#newProjectModal">create</button></span>
-          <span> | </span>
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#newProjectModal">create</button></span>
+          <span> • </span>
           <span><button class="menu-buttons" data-toggle="modal" data-target="#updateProjectModal">edit</button></span>
-          <span> | </span>
-          <span><button id="entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#entriesModal">projects</button></span>
-          <span> | </span>
-          <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteDialogModal">delete</button></span>
-          <span> | </span> -->
+          <span> • </span>
+          <!-- <span><button id="entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#entriesModal">projects</button></span> -->
+          <span> • </span>
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteProjectModal">delete</button></span>
+          <span> • </span>
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#changePasswordModal">account</button></span>
           <span> • </span>
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signOutModal">sign out</button></span>
         </div>
       </div>
 
-      <div>
+
         <!-- MODALS -->
+
       <!-- SIGN UP MODAL BEGINS -->
         <div class="modal fade" id="signUpModal">
           <div class="modal-dialog">
@@ -143,7 +145,38 @@
           </div>
         </div>
 
-      </div>
+        <!-- CREATE PROJECT MODAL BEGINS -->
+        <div class="modal fade" id="newProjectModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newProjectModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="create-project">
+                    <fieldset>
+                      <legend>create</legend>
+                        <input name="project[name]" type="text"  placeholder="project name">
+                        <input name="project[description]" type="text"  placeholder="project description">
+                        <br>
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
 
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id='message' class='message'></div>
     </body>
 </html>
