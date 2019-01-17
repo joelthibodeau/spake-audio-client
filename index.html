@@ -165,7 +165,7 @@
                 <div class="modal-body">
                   <form id="create-project">
                     <fieldset>
-                      <legend>create</legend>
+                      <legend>new project</legend>
                         <input name="project[name]" type="text"  placeholder="project name">
                         <input name="project[description]" type="text"  placeholder="project description">
                         <br>
@@ -246,6 +246,8 @@
           </div>
         </div> -->
 
+        <!-- SESSIONS HERE -->
+
         <!-- CREATE SESSION MODAL BEGINS -->
         <div class="modal fade" id="newSessionModal">
           <div class="modal-dialog">
@@ -259,13 +261,40 @@
                 <div class="modal-body">
                   <form id="create-session">
                     <fieldset>
-                      <legend>create session</legend>
-                        <input name="session[project_id]" type="number"  placeholder="project id">
-                        <input name="session[date]" type="text"  placeholder="date">
-                        <input name="session[hours_worked]" type="number"  placeholder="0.00">
-                        <input name="session[hours_recorded]" type="number"  placeholder="0.00">
-                        <input name="session[notes]" type="text"  placeholder="notes">                        <br>
+                      <legend>new session</legend>
+                        <input name="session[project_id]" type="number" step=".01" placeholder="project id">
+                        <input name="session[date]" type="text" placeholder="date">
+                        <input name="session[hours_worked]" type="number" step="0.01" placeholder="0.00">
+                        <input name="session[hours_recorded]" type="number" step="0.01" placeholder="0.00">
+                        <input name="session[notes]" type="text"  placeholder="notes">
                         <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPDATE SESSION MODAL BEGINS -->
+        <div class="modal fade" id="updateSessionModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateSessionModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="update-session">
+                    <fieldset>
+                      <legend>update session</legend>
+                      <input name="session[id]" type="number"  placeholder="session id">
+                      <input name="session[date]" type="text"  placeholder="date">
+                      <input name="session[hours_worked]" type="number" step="0.01" placeholder="0.00">
+                      <input name="session[hours_recorded]" type="number" step="0.01" placeholder="0.00">
+                      <input name="session[notes]" type="text"  placeholder="notes">
+                      <input type="submit" value="save" class="modal-buttons">
                     </fieldset>
                   </form>
                </div>
