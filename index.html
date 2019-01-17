@@ -27,11 +27,16 @@
           <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signInModal">sign in</button></span>
         </div>
         <div id="signed-in">
-          <span><button class="menu-buttons" data-toggle="modal" data-target="#newProjectModal">create</button></span>
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#newProjectModal">add project</button></span>
           <span> • </span>
-          <span><button class="menu-buttons" data-toggle="modal" data-target="#updateProjectModal">edit</button></span>
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#updateProjectModal">edit project</button></span>
           <span> • </span>
-          <!-- <span><button id="entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#entriesModal">projects</button></span> -->
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#newSessionModal">add session</button></span>
+          <span> • </span>
+          <span><button class="menu-buttons" data-toggle="modal" data-target="#updateSessionModal">edit session</button></span>
+          <span> • </span>
+
+          <span><button id="entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#projectEntriesModal">projects</button></span>
           <span> • </span>
           <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteProjectModal">delete</button></span>
           <span> • </span>
@@ -170,6 +175,45 @@
           </div>
         </div>
 
+        <!-- PROJECT ENTRIES MODAL BEGINS -->
+        <!-- <div class="modal fade" id="projectEntriesModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="projectEntriesModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <legend>projects</legend>
+                  <div id='projects-info' class='projects-info'></div>
+               </div>
+
+            </div>
+          </div>
+        </div> -->
+
+        <!-- SESSION ENTRIES MODAL BEGINS -->
+        <div class="modal fade" id="sessionEntriesModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="sessionEntriesModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <legend>projects</legend>
+                  <div id='sessions-info' class='sessions-info'></div>
+               </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id='projects-info' class='projects-info'></div>
 
     <br>
     <br>
