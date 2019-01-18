@@ -16,7 +16,7 @@ const createSession = data => {
 
 const updateSession = data => {
   // get id out of data
-  console.log('got into updateSession in api.js and data is', data)
+  // console.log('got into updateSession in api.js and data is', data)
   const id = data.session.id
   // delete id from data before sending it
   delete data.session.id

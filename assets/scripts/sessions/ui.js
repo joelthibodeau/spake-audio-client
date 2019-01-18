@@ -16,36 +16,36 @@ const createSessionSuccess = data => {
   $('.message').text('created session successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('createSessionSuccess ran. Data is:', data)
+  // console.log('createSessionSuccess ran. Data is:', data)
   emptyMessage()
 }
 
-// change 'error =>' to '() =>' to prevent linter error
-const createSessionFailure = error => {
+// change 'error =>' to 'function' to prevent linter error
+const createSessionFailure = function () {
   $('.message').text('error on create project')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('createSessionFailure ran. Error is :', error)
+  // console.error('createSessionFailure ran. Error is :', error)
   emptyMessage()
 }
 
-const updateSessionSuccess = data => {
+const updateSessionSuccess = function () {
   $('#update-session').trigger('reset')
   // close modal on update session success
   $('#updateSessionModal').modal('hide')
   $('.message').text('updated session successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('updateSessionSuccess ran. Data is:', data)
+  // console.log('updateSessionSuccess ran. Data is:', data)
   emptyMessage()
 }
 
-// change 'error =>' to '() =>' to prevent linter error
-const updateSessionFailure = error => {
+// change 'error =>' to 'function ()' to prevent linter error
+const updateSessionFailure = function () {
   $('.message').text('error on update session')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('updateSessionFailure ran. Error is :', error)
+  // console.error('updateSessionFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -56,16 +56,16 @@ const deleteSessionSuccess = data => {
   $('.message').text('delete session successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('deleteSessionSuccess ran.')
+  // console.log('deleteSessionSuccess ran.')
   emptyMessage()
 }
 
-// change 'error =>' to '() =>' to prevent linter error
-const deleteSessionFailure = error => {
+// change 'error =>' to 'function ()' to prevent linter error
+const deleteSessionFailure = function () {
   $('.message').text('error on delete session')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('deleteSessionFailure ran. Error is :', error)
+  // console.error('deleteSessionFailure ran. Error is :', error)
   emptyMessage()
 }
 

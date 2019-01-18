@@ -9,21 +9,21 @@ const ui = require('./ui.js')
 const onCreateProject = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onCreateProject ran.')
+  // console.log('onCreateProject ran.')
   api.createProject(data)
     .then(ui.createProjectSuccess)
     .catch(ui.createProjectFailure)
 }
 
 const onUpdateProject = event => {
-  console.log('got into update-project...about to prevent default')
+  // console.log('got into update-project...about to prevent default')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log('onUpdateProject ran.')
-  console.log('my project id is ', data.project.id)
-  console.log('my project id name ', data.project.name)
-  console.log('my project id description ', data.project.description)
+  // console.log(data)
+  // console.log('onUpdateProject ran.')
+  // console.log('my project id is ', data.project.id)
+  // console.log('my project id name ', data.project.name)
+  // console.log('my project id description ', data.project.description)
   api.updateProject(data)
     .then(function (response) {
       ui.updateProjectSuccess(response)
@@ -35,11 +35,11 @@ const onDeleteProject = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
   // const data = $('#delete-input').val()
-  console.log('delete project')
-  console.log(data)
+  // console.log('delete project')
+  // console.log(data)
   // take this data and send it to our server
   // using an HTTP request (POST)
-  console.log('onDeleteProject ran.')
+  // console.log('onDeleteProject ran.')
   api.deleteProject(data)
     .then(ui.deleteProjectSuccess) // if your request was succesful
     .catch(ui.deleteProjectFailure) // if your request failed
@@ -47,11 +47,11 @@ const onDeleteProject = event => {
 
 const onGetProjects = event => {
   event.preventDefault()
-  console.log('onGetProjects ran.')
+  // console.log('onGetProjects ran.')
   api.getAllProjects()
     .then((result) => {
       document.getElementById('projects-info').innerHTML = ''
-      console.log(result)
+      // console.log(result)
       // code inspired by tic tac toe
       // 1. create new div
       // 2. add id to newly created div
@@ -68,8 +68,8 @@ const onGetProjects = event => {
       }
     })
     // change 'error =>' to '() =>' to prevent linter error
-    .catch((error) => {
-      console.log(error)
+    .catch(() => {
+      // console.log(error)
     })
 }
 const addProjectHandlers = () => {

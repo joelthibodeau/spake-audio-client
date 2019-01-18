@@ -16,16 +16,16 @@ const signUpSuccess = data => {
   $('.message').text('signed up successfully')
   $('.message').attr('class', 'message') // removes all classes except the default class of 'message'
   $('.message').addClass('success')
-  console.log('signUpSucces ran. Data is:', data)
+  // console.log('signUpSucces ran. Data is:', data)
   emptyMessage()
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const signUpFailure = error => {
+const signUpFailure = function () {
   $('.message').text('error on sign up')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('signUpFailure ran. Error is :', error)
+  // console.error('signUpFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -43,16 +43,16 @@ const signInSuccess = data => {
   $('.message').text('signed in successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('signInSuccess ran. Data is:', data)
+  // console.log('signInSuccess ran. Data is:', data)
   emptyMessage()
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const signInFailure = error => {
+const signInFailure = function () {
   $('.message').text('error on sign in')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('signInFailure ran. Error is :', error)
+  // console.error('signInFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -64,16 +64,16 @@ const changePasswordSuccess = data => {
   $('.message').text('changed password successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('changedPasswordSuccess ran. Data is:', data)
+  // console.log('changedPasswordSuccess ran. Data is:', data)
   emptyMessage()
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const changePasswordFailure = error => {
+const changePasswordFailure = function () {
   $('.message').text('error changing password')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('changedPasswordFailure ran. Error is :', error)
+  // console.error('changedPasswordFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -86,16 +86,16 @@ const signOutSuccess = data => {
   store.user = {} // or = null
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('signOutSuccess ran. Data is:', data)
+  // console.log('signOutSuccess ran. Data is:', data)
   emptyMessage()
 }
 
 // change '= error =>' to '() =>' to prevent linter error
-const signOutFailure = error => {
+const signOutFailure = function () {
   $('.message').text('error on sign out')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
   emptyMessage()
 }
 

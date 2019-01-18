@@ -9,23 +9,23 @@ const ui = require('./ui.js')
 const onCreateSession = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onCreateSession ran.')
+  // console.log('onCreateSession ran.')
   api.createSession(data)
     .then(ui.createSessionSuccess)
     .catch(ui.createSessionFailure)
 }
 
 const onUpdateSession = event => {
-  console.log('got into update-session...about to prevent default')
+  // console.log('got into update-session...about to prevent default')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log('onUpdateSession ran.')
-  console.log('my session id is ', data.session.id)
-  console.log('my session date ', data.session.date)
-  console.log('my session hours worked ', data.session.hours_worked)
-  console.log('my session id hours recorded ', data.session.hours_recorded)
-  console.log('my session notes ', data.session.notes)
+  // console.log(data)
+  // console.log('onUpdateSession ran.')
+  // console.log('my session id is ', data.session.id)
+  // console.log('my session date ', data.session.date)
+  // console.log('my session hours worked ', data.session.hours_worked)
+  // console.log('my session id hours recorded ', data.session.hours_recorded)
+  // console.log('my session notes ', data.session.notes)
   api.updateSession(data)
     .then(function (response) {
       ui.updateSessionSuccess(response)
@@ -37,11 +37,11 @@ const onDeleteSession = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
   // const data = $('#delete-input').val()
-  console.log('delete session')
-  console.log(data)
+  // console.log('delete session')
+  // console.log(data)
   // take this data and send it to our server
   // using an HTTP request (POST)
-  console.log('onDeleteSession ran.')
+  // console.log('onDeleteSession ran.')
   api.deleteSession(data)
     .then(ui.deleteSessionSuccess) // if your request was succesful
     .catch(ui.deleteSessionFailure) // if your request failed
@@ -49,11 +49,11 @@ const onDeleteSession = event => {
 
 const onGetSessions = event => {
   event.preventDefault()
-  console.log('onGetSessions ran.')
+  // console.log('onGetSessions ran.')
   api.getAllSessions()
     .then((result) => {
       document.getElementById('sessions-info').innerHTML = ''
-      console.log(result)
+      // console.log(result)
       // code inspired by tic tac toe
       // 1. create new div
       // 2. add id to newly created div
@@ -70,8 +70,8 @@ const onGetSessions = event => {
       }
     })
     // change 'error =>' to '() =>' to prevent linter error
-    .catch((error) => {
-      console.log(error)
+    .catch(() => {
+      // console.log(error)
     })
 }
 const addSessionHandlers = () => {

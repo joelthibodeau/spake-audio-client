@@ -16,16 +16,16 @@ const createProjectSuccess = data => {
   $('.message').text('created project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('createProjectSuccess ran. Data is:', data)
+  // console.log('createProjectSuccess ran. Data is:', data)
   emptyMessage()
 }
 
-// change 'error =>' to '() =>' to prevent linter error
-const createProjectFailure = error => {
+// change 'error =>' to 'function ()' to prevent linter error
+const createProjectFailure = function () {
   $('.message').text('error on create project')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('createProjectFailure ran. Error is :', error)
+  // console.error('createProjectFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -41,11 +41,11 @@ const updateProjectSuccess = data => {
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const updateProjectFailure = error => {
+const updateProjectFailure = function () {
   $('.message').text('error on update project')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('updateProjectFailure ran. Error is :', error)
+  // console.error('updateProjectFailure ran. Error is :', error)
   emptyMessage()
 }
 
@@ -56,16 +56,16 @@ const deleteProjectSuccess = data => {
   $('.message').text('delete project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('deleteProjectSuccess ran.')
+  // console.log('deleteProjectSuccess ran.')
   emptyMessage()
 }
 
 // change 'error =>' to '() =>' to prevent linter error
-const deleteProjectFailure = error => {
+const deleteProjectFailure = function () {
   $('.message').text('error on delete project')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  console.error('deleteProjectFailure ran. Error is :', error)
+  // console.error('deleteProjectFailure ran. Error is :', error)
   emptyMessage()
 }
 
