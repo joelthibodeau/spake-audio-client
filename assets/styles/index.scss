@@ -29,6 +29,23 @@ body {
   margin-bottom: 30px;
 }
 
+.message {
+  // display: none;
+  color: $mint-green;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  padding: 25px;
+  text-align: center;
+
+  &.success {
+    color: $darker-green;
+  }
+
+  &.failure {
+    color: $failure-red;
+  }
+}
+
 .modal-signup {
   background-color: $darker-green;
   border: solid $mint-green;
