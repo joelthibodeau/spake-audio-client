@@ -2,10 +2,19 @@
 
 // const store = require('../store.js')
 
+const showProjectsTemplate = require('../templates/project-listing.handlebars')
+
 const emptyMessage = () => {
   setTimeout(function () {
     $('.message').text('')
   }, 3000)
+}
+
+const getProjectsSuccess = (data) => {
+  console.log('in UI')
+  console.log(data)
+  const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
+  $('#projects-info').html(showProjectsHtml)
 }
 
 const createProjectSuccess = data => {
@@ -70,6 +79,7 @@ const deleteProjectFailure = function () {
 }
 
 module.exports = {
+  getProjectsSuccess,
   createProjectSuccess,
   createProjectFailure,
   updateProjectSuccess,

@@ -46,6 +46,7 @@ const deleteProject = data => {
 }
 
 const getAllProjects = () => {
+  console.log('getting all')
   return $.ajax({
     url: config.apiUrl + '/projects',
     method: 'GET',
