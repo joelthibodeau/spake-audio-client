@@ -1,14 +1,17 @@
+<tr>
+  <th>Project</th>
+  <th>Description</th>
+
+</tr>
+
 {{#each projects as |project|}}
   {{log project}}
 
-  <div>
-    <h1 data-id="{{project.id}}"> <small>{{ project.name }}</small></h1>
-    <section data-id="{{project.id}}">
-      <p>
-        {{project.description}}
-      </p>
-      <button type="submit" class="btn btn-default delete-book">Remove</button>
-    </section>
-  </div>
+
+      <tr>
+        <td data-id="{{project.id}}"> <small>{{ project.name }}</small></td>
+        <td data-id="{{project.id}}"> <small>{{ project.description }}</small></td>
+        <td> <button type="submit" class="btn btn-default delete-project">Remove</button> </td>
+      </tr>
 
 {{/each}}
