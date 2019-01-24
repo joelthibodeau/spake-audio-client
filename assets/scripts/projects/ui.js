@@ -36,7 +36,7 @@ const updateProjectSuccess = data => {
   $('.message').text('updated project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('updateProjectSuccess ran. Data is:', data)
+  // console.log('updateProjectSuccess ran. Data is:', data)
   emptyMessage()
 }
 
