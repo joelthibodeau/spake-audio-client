@@ -11,7 +11,8 @@ const onCreateProject = event => {
   const data = getFormFields(event.target)
   // console.log('onCreateProject ran.')
   api.createProject(data)
-    .then(ui.createProjectSuccess)
+  // refreshes user projects
+    .then(() => projectSuccess(event))
     .catch(ui.createProjectFailure)
 }
 
@@ -31,18 +32,28 @@ const onUpdateProject = event => {
     .catch(ui.updateProjectFailure)
 }
 
-const onDeleteProject = event => {
+// const onDeleteProject = event => {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   // const data = $('#delete-input').val()
+//   // console.log('delete project')
+//   // console.log(data)
+//   // take this data and send it to our server
+//   // using an HTTP request (POST)
+//   // console.log('onDeleteProject ran.')
+//   api.deleteProject(data)
+//     .then(ui.deleteProjectSuccess) // if your request was succesful
+//     .catch(ui.deleteProjectFailure) // if your request failed
+// }
+
+// refactored onDeleteProject for handlebars
+const onDeleteProject = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  // const data = $('#delete-input').val()
-  // console.log('delete project')
-  // console.log(data)
-  // take this data and send it to our server
-  // using an HTTP request (POST)
-  // console.log('onDeleteProject ran.')
-  api.deleteProject(data)
-    .then(ui.deleteProjectSuccess) // if your request was succesful
-    .catch(ui.deleteProjectFailure) // if your request failed
+  const projectId = $(event.target).closest('tr').data('id')
+  console.log(projectId)
+  api.deleteProject(projectId)
+    .then(() => projectSuccess(event))
+    .catch(ui.failure)
 }
 //
 //
@@ -74,6 +85,7 @@ const onDeleteProject = event => {
 //     })
 // }
 
+// new function to get Projects for handlebars
 const projectSuccess = function (event) {
   event.preventDefault()
   console.log('hi')
@@ -85,7 +97,8 @@ const projectSuccess = function (event) {
 const addProjectHandlers = () => {
   $('#create-project').on('submit', onCreateProject)
   $('#update-project').on('submit', onUpdateProject)
-  $('#delete-project').on('submit', onDeleteProject)
+  // $('#delete-project').on('submit', onDeleteProject)
+  $('#projects-info').on('click', '.delete-project-button', onDeleteProject)
   $('#entries-button').on('click', projectSuccess)
 }
 

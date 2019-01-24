@@ -32,16 +32,15 @@ const updateProject = data => {
 
 const deleteProject = data => {
   // get id out of data
-  const id = data.project.id
+  const id = data
   // delete id from data before sending it
-  delete data.project.id
+  // delete data.project.id
   return $.ajax({
     url: config.apiUrl + `/projects/${id}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: {}
+    }
   })
 }
 
