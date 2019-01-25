@@ -9,7 +9,7 @@ their progress on a recording project.
 
 ### Screenshot ###
 
-![SPAKE Audio Wireframe](./images/spake-audio-ss.png)
+![SPAKE Audio Screenshot](./images/spake-audio-ss.png)
 
 ### Links ###
 
@@ -88,9 +88,14 @@ Install dependencies for the back-end repo by running:
 * As a user, I want the option to generate, save and print an invoice as a pdf.
 * As a user, I want to sign out.
 
+### Screenshot ###
+
+![SPAKE Audio Wireframe](./images/spake-audio-wireframe.png)
+
 ### Planning & Future Iterations ###
 
 The current version of SPAKE Audio is a work in progress. Future iterations
 will fulfill the functionality expected in the user stories and have a finished
-front-end design. I plan to use learn handlebars to display projects and
-sessions in a way that is usefule and meaningful to the user.
+front-end design. I'm in the process of rebuilding the front-end using handlebars
+to display to create a better user experience. I will add an mp3 rousource to
+the back-end and use AWS to store the files.
