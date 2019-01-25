@@ -7,6 +7,10 @@
 SPAKE Audio is web application that allows users to sign up, sign in and track
 their progress on a recording project.
 
+### Screenshot ###
+
+![SPAKE Audio Wireframe](./images/spake-audio-ss.png)
+
 ### Links ###
 
 * API Repository – https://github.com/joelthibodeau/spake-audio-api
@@ -20,6 +24,49 @@ SPAKE Audio is my fourth project in General Assembly's Web Development Immersive
 program. I used JavaScript, CSS/Sass, HTML5, jQuery and Bootstrap to build the
 front-end, and Ruby on Rails along with heroku for the back-end to create this
 single page application.
+
+### Installation ###
+
+Install dependencies for the front-end repo by running:
+```npm install```, then
+```npm run start```
+
+Install dependencies for the back-end repo by running:
+```bundle install```, then
+```bin/rails server```
+
+### Routes ###
+
+#### User ####
+
+/sign-in : POST
+
+/sign-up : POST
+
+/change-password : PATCH
+
+/sign-out : DELETE
+
+##### Projects #####
+
+/projects : GET
+
+/projects : POST
+
+/projects/${id} : PATCH
+
+/projects/${id} : DELETE
+
+##### Sessions #####
+
+/sessions : GET
+
+/sessions : POST
+
+/sessions/${id} : PATCH
+
+/sessions/${id} : DELETE
+
 
 ### User Stories ###
 
@@ -41,9 +88,7 @@ single page application.
 * As a user, I want the option to generate, save and print an invoice as a pdf.
 * As a user, I want to sign out.
 
-### Wireframe ###
-
-![SPAKE Audio ERD] 'link'
+### Entity Relationship Diagram (ERD) ###
 
 ### Planning & Future Iterations ###
 
