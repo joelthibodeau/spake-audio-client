@@ -88,8 +88,6 @@ Install dependencies for the back-end repo by running:
 * As a user, I want the option to generate, save and print an invoice as a pdf.
 * As a user, I want to sign out.
 
-### Entity Relationship Diagram (ERD) ###
-
 ### Planning & Future Iterations ###
 
 The current version of SPAKE Audio is a work in progress. Future iterations
