@@ -25,48 +25,6 @@ program. I used JavaScript, CSS/Sass, HTML5, jQuery and Bootstrap to build the
 front-end, and Ruby on Rails along with heroku for the back-end to create this
 single page application.
 
-### Installation ###
-
-Install dependencies for the front-end repo by running:
-```npm install```, then
-```npm run start```
-
-Install dependencies for the back-end repo by running:
-```bundle install```, then
-```bin/rails server```
-
-### Routes ###
-
-#### User ####
-
-/sign-in : POST
-
-/sign-up : POST
-
-/change-password : PATCH
-
-/sign-out : DELETE
-
-##### Projects #####
-
-/projects : GET
-
-/projects : POST
-
-/projects/${id} : PATCH
-
-/projects/${id} : DELETE
-
-##### Sessions #####
-
-/sessions : GET
-
-/sessions : POST
-
-/sessions/${id} : PATCH
-
-/sessions/${id} : DELETE
-
 
 ### User Stories ###
 
