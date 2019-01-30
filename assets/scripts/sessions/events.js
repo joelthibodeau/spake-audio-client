@@ -47,38 +47,52 @@ const onDeleteSession = event => {
     .catch(ui.deleteSessionFailure) // if your request failed
 }
 
-const onGetSessions = event => {
+// ORIGINAL GET ACTION
+// const onGetSessions = event => {
+//   event.preventDefault()
+//   // console.log('onGetSessions ran.')
+//   api.getAllSessions()
+//     .then((result) => {
+//       document.getElementById('sessions-info').innerHTML = ''
+//       // console.log(result)
+//       // code inspired by tic tac toe
+//       // 1. create new div
+//       // 2. add id to newly created div
+//       // 3. add class to newly created div
+//       // 4. make newly created div the child of #sessions-info div
+//       // 5. add projects result to the newly created div for specific game
+//       for (let i = 0; i < result.sessions.length; i++) {
+//         const elementSessionEntry = document.createElement('div') // 1.
+//         elementSessionEntry.setAttribute('id', 'session-entry-' + i) // 2.
+//         // elementSessionEntry.setAttribute('class', 'session-entry-element') // 3.
+//         document.getElementById('sessions-info').appendChild(elementSessionEntry) // 4.
+//         // removed result.sessions[i].notes from concatenation
+//         document.getElementById('session-entry-' + i).innerHTML = 'session ID: ' + result.sessions[i].id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + 'project ID: ' + result.sessions[i].project_id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + result.sessions[i].date + ' .' + '.' + '.' + '.' + '. ' + 'hrs worked: ' + result.sessions[i].hours_worked_readable + ' .' + '.' + '.' + '.' + '. ' + 'hrs recorded: ' + result.sessions[i].hours_recorded_readable + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].notes// 5.
+//       }
+//     })
+//     // change 'error =>' to '() =>' to prevent linter error
+//     .catch(() => {
+//       // console.log(error)
+//     })
+// }
+
+// new function to get Sessions for handlebars
+const sessionSuccess = function (event) {
   event.preventDefault()
-  // console.log('onGetSessions ran.')
+  console.log('hi')
   api.getAllSessions()
-    .then((result) => {
-      document.getElementById('sessions-info').innerHTML = ''
-      // console.log(result)
-      // code inspired by tic tac toe
-      // 1. create new div
-      // 2. add id to newly created div
-      // 3. add class to newly created div
-      // 4. make newly created div the child of #sessions-info div
-      // 5. add projects result to the newly created div for specific game
-      for (let i = 0; i < result.sessions.length; i++) {
-        const elementSessionEntry = document.createElement('div') // 1.
-        elementSessionEntry.setAttribute('id', 'session-entry-' + i) // 2.
-        // elementSessionEntry.setAttribute('class', 'session-entry-element') // 3.
-        document.getElementById('sessions-info').appendChild(elementSessionEntry) // 4.
-        // removed result.sessions[i].notes from concatenation
-        document.getElementById('session-entry-' + i).innerHTML = 'session ID: ' + result.sessions[i].id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + 'project ID: ' + result.sessions[i].project_id + ' .' + '.' + '.' + '.' + '.' + '.' + '. ' + result.sessions[i].date + ' .' + '.' + '.' + '.' + '. ' + 'hrs worked: ' + result.sessions[i].hours_worked_readable + ' .' + '.' + '.' + '.' + '. ' + 'hrs recorded: ' + result.sessions[i].hours_recorded_readable + ' .' + '.' + '.' + '.' + '. ' + result.sessions[i].notes// 5.
-      }
-    })
-    // change 'error =>' to '() =>' to prevent linter error
-    .catch(() => {
-      // console.log(error)
-    })
+    .then(ui.getSessionsSuccess)
+    .catch(ui.getSessionsFailure)
 }
+
 const addSessionHandlers = () => {
   $('#create-session').on('submit', onCreateSession)
   $('#update-session').on('submit', onUpdateSession)
   $('#delete-session').on('submit', onDeleteSession)
-  $('#session-entries-button').on('click', onGetSessions)
+  // for ORIGINAL GET SESSIONS
+  // $('#session-entries-button').on('click', onGetSessions)
+  $('#sessions-info').on('click', '.delete-session-button', onDeleteSession)
+  $('#entries-button').on('click', sessionSuccess)
 }
 
 // NEED TO CREATE NEW FUNCTION FOR CREATING NEW AUTH HANDLERS

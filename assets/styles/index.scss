@@ -30,7 +30,7 @@ body {
 }
 
 .menu-buttons {
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   background-color: $darker-green;
@@ -69,7 +69,12 @@ body {
   }
 }
 
-.modal-signup {
+.modal-style {
+  background-color: $mint-green;
+  color: $darker-green;
+}
+
+.modal-signup-button {
   background-color: $darker-green;
   border: solid $mint-green;
   border-radius: 8px;
@@ -99,4 +104,151 @@ body {
 
 .modal-lg {
   max-width: 60%;
+}
+
+.projects-table {
+  // border: solid 1px $darker-green;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 75%;
+  // display: flex;
+  // font: normal 13px Arial, sans-serif;
+}
+
+.projects-table thead th {
+  background-color: $mint-green;
+  border: solid 1px $darker-green;
+  color: $darker-green;
+  display: flex;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  // text-shadow: 1px 1px 1px #fff;
+}
+
+.projects-table tbody td {
+  border: solid 1px $darker-green;
+  color: $mint-green;
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  // text-shadow: 1px 1px 1px #fff;
+}
+
+// .sessions-table {
+//   // border: solid 1px $darker-green;
+//   background-color: $mint-green;
+//   border-collapse: collapse;
+//   border-spacing: 0;
+//   margin: 0 auto;
+//   width: 100%;
+//   // display: flex;
+//   // font: normal 13px Arial, sans-serif;
+// }
+//
+// .sessions-table thead th {
+//   background-color: $mint-green;
+//   color: $darker-green;
+//   display: flex;
+//   padding: 10px;
+//   text-align: left;
+//   width: 100%;
+//   // text-shadow: 1px 1px 1px #fff;
+// }
+//
+// .sessions-table tbody td {
+//   color: $mint-green;
+//   display: flex;
+//   padding: 10px;
+//   width: 100%;
+// }
+
+.sessions-table {
+  border: 1px solid $mint-green;
+  border-collapse: collapse;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sessions-table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+.sessions-table tr {
+  background-color: $mint-green;
+  border: 1px solid $darker-green;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 0.35em;
+}
+
+.sessions-table th,
+.sessions-table td {
+  padding: 0.625em;
+  text-align: left;
+}
+
+.sessions-table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  // text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .sessions-table {
+    border: 0;
+  }
+
+  .sessions-table caption {
+    font-size: 1.3em;
+  }
+
+  .sessions-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid $darker-green;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid $darker-green;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.player-container audio::-webkit-media-controls-panel {
+  background-color: $mint-green;
+  color: $darker-green;
 }

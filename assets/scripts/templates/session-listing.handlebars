@@ -1,0 +1,24 @@
+<tr>
+  <th>id</th>
+  <th>date</th>
+  <th>hrs worked</th>
+  <th>hrs recorded</th>
+  <th>notes</th>
+  <th></th>
+
+</tr>
+
+{{#each sessions as |session|}}
+  {{log session}}
+
+
+      <tr data-id="{{session.id}}">
+        <td data-id="{{session.id}}"> <small>{{ session.id }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.date }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.hours_worked_readable }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.hours_recorded_readable }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.notes }}</small> </td>
+        <td> <button type="submit" class="menu-buttons">Remove</button> </td>
+      </tr>
+
+{{/each}}

@@ -2,10 +2,19 @@
 
 // const store = require('../store.js')
 
+const showSessionsTemplate = require('../templates/session-listing.handlebars')
+
 const emptyMessage = () => {
   setTimeout(function () {
     $('.message').text('')
   }, 3000)
+}
+
+const getSessionsSuccess = (data) => {
+  console.log('in UI')
+  console.log(data)
+  const showSessionsHtml = showSessionsTemplate({ sessions: data.sessions })
+  $('#sessions-info').html(showSessionsHtml)
 }
 
 const createSessionSuccess = data => {
@@ -70,6 +79,7 @@ const deleteSessionFailure = function () {
 }
 
 module.exports = {
+  getSessionsSuccess,
   createSessionSuccess,
   createSessionFailure,
   updateSessionSuccess,
