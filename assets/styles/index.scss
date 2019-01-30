@@ -13,7 +13,7 @@ $lighter-green: #d5e5d1;
 // $dark-putty: #686256;
 $orange-red: #c1502e;
 // $dim-teal: #587e76;
-// $rouge: #a96e5b;
+$rouge: #a96e5b;
 
 body {
   background-color: #eaf2e8;
@@ -48,6 +48,29 @@ body {
     background-color: $light-green;
     border: solid $light-green;
     color: $mint-green;
+    cursor: pointer;
+  }
+}
+
+.project-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mint-green;
+  border: solid $mint-green;
+  border-radius: 4px;
+  color: $darker-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $mint-green;
+    border: solid $mint-green;
+    color: $rouge;
     cursor: pointer;
   }
 }
