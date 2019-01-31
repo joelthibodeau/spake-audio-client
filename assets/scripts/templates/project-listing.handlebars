@@ -2,8 +2,8 @@
   <th>ID</th>
   <th>Project</th>
   <th>Description</th>
-  <th></th>
   <th>Sample Clip</th>
+  <th></th>
 
 </tr>
 
@@ -15,8 +15,8 @@
         <td data-id="{{project.id}}"> <small>{{ project.id }}</small></td>
         <td data-id="{{project.id}}"> <small>{{ project.name }}</small></td>
         <td data-id="{{project.id}}"> <small>{{ project.description }}</small></td>
-        <td> <button type="submit" class="project-button">delete</button> </td>
         <td class="player-container"> <audio controls> <source src="https://dl.dropbox.com/s/c6ihwtuloi1sr3b/SPAKE_sample-1%20%5BR-Dulude%5D.mp3?dl=0" type="audio/mpeg"> </audio> </td>
+        <td> <button type="submit" class="delete-button delete-project">delete</button> </td>
       </tr>
 
 {{/each}}

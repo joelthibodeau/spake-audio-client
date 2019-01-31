@@ -65,7 +65,7 @@ const deleteProjectSuccess = data => {
   $('.message').text('delete project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  // console.log('deleteProjectSuccess ran.')
+  console.log('deleteProjectSuccess ran.')
   emptyMessage()
 }
 

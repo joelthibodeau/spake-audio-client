@@ -33,31 +33,8 @@ body {
   // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $darker-green;
-  border: solid $darker-green;
-  border-radius: 4px;
-  color: $mint-green;
-  display: inline-block;
-  font-family: 'Questrial', sans-serif;
-  font-size: 15px;
-  // margin: 12px;
-  outline: none !important;
-  // padding: 20px;
-
-  &:hover {
-    background-color: $light-green;
-    border: solid $light-green;
-    color: $mint-green;
-    cursor: pointer;
-  }
-}
-
-.project-button {
-  // display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: $mint-green;
-  border: solid $mint-green;
+  border: 1.25px solid $mint-green;
   border-radius: 4px;
   color: $darker-green;
   display: inline-block;
@@ -65,11 +42,35 @@ body {
   font-size: 15px;
   // margin: 12px;
   outline: none !important;
+  padding: 3px 5px;
   // padding: 20px;
 
   &:hover {
     background-color: $mint-green;
-    border: solid $mint-green;
+    border: 1.25px solid $mint-green;
+    color: $rouge;
+    cursor: pointer;
+  }
+}
+
+.delete-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mint-green;
+  border: 1.25px solid $mint-green;
+  border-radius: 4px;
+  color: $darker-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $mint-green;
+    border: 1.25px solid $mint-green;
     color: $rouge;
     cursor: pointer;
   }
@@ -129,6 +130,8 @@ body {
   max-width: 60%;
 }
 
+// ||||||||||||||||| PROJECTS TABLE |||||||||||||||||
+
 .projects-table {
   // border: solid 1px $darker-green;
   border-collapse: collapse;
@@ -158,6 +161,97 @@ body {
   width: 100%;
   // text-shadow: 1px 1px 1px #fff;
 }
+
+.sessions-table {
+  border: 1px solid $mint-green;
+  border-collapse: collapse;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sessions-table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+.sessions-table tr {
+  background-color: $mint-green;
+  border: 1px solid $darker-green;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 0.35em;
+}
+
+.sessions-table th,
+.sessions-table td {
+  padding: 0.625em;
+  text-align: left;
+}
+
+.sessions-table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  // text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .sessions-table {
+    border: 0;
+  }
+
+  .sessions-table caption {
+    font-size: 1.3em;
+  }
+
+  .sessions-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .sessions-table tr {
+    border-bottom: 3px solid $darker-green;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .sessions-table td {
+    border-bottom: 1px solid $darker-green;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .sessions-table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);.
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .sessions-table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.player-container audio::-webkit-media-controls-panel {
+  background-color: $mint-green;
+  color: $darker-green;
+}
+
+// |||||||||||||||||||||||||||||||||||||||||||||||||||
 
 // .sessions-table {
 //   // border: solid 1px $darker-green;

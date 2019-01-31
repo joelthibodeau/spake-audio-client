@@ -30,13 +30,25 @@ const updateProject = data => {
   })
 }
 
-const deleteProject = data => {
-  // get id out of data
-  const id = data
-  // delete id from data before sending it
-  // delete data.project.id
+// ORIGINAL DELETE PROJECT
+// const deleteProject = data => {
+//   // get id out of data
+//   const id = data
+//   // delete id from data before sending it
+//   // delete data.project.id
+//   return $.ajax({
+//     url: config.apiUrl + `/projects/${id}`,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
+// NEW DELETE BOOK FOR HANDLEBARS
+const deleteProject = (projectId) => {
   return $.ajax({
-    url: config.apiUrl + `/projects/${id}`,
+    url: config.apiUrl + '/projects/' + projectId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
