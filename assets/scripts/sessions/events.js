@@ -33,18 +33,29 @@ const onUpdateSession = event => {
     .catch(ui.updateSessionFailure)
 }
 
-const onDeleteSession = event => {
+// ORIGINAL onDeleteSession
+// const onDeleteSession = event => {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   // const data = $('#delete-input').val()
+//   // console.log('delete session')
+//   // console.log(data)
+//   // take this data and send it to our server
+//   // using an HTTP request (POST)
+//   // console.log('onDeleteSession ran.')
+//   api.deleteSession(data)
+//     .then(ui.deleteSessionSuccess) // if your request was succesful
+//     .catch(ui.deleteSessionFailure) // if your request failed
+// }
+
+// refactored onDeleteSession for handlebars
+const onDeleteSession = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  // const data = $('#delete-input').val()
-  // console.log('delete session')
-  // console.log(data)
-  // take this data and send it to our server
-  // using an HTTP request (POST)
-  // console.log('onDeleteSession ran.')
-  api.deleteSession(data)
-    .then(ui.deleteSessionSuccess) // if your request was succesful
-    .catch(ui.deleteSessionFailure) // if your request failed
+  const sessionId = $(event.target).closest('tr').data('id')
+  console.log(sessionId)
+  api.deleteSession(sessionId)
+    .then(() => sessionSuccess(event))
+    .catch(ui.failure)
 }
 
 // ORIGINAL GET ACTION
@@ -88,11 +99,12 @@ const sessionSuccess = function (event) {
 const addSessionHandlers = () => {
   $('#create-session').on('submit', onCreateSession)
   $('#update-session').on('submit', onUpdateSession)
-  $('#delete-session').on('submit', onDeleteSession)
+  // $('#delete-session').on('submit', onDeleteSession)
   // for ORIGINAL GET SESSIONS
   // $('#session-entries-button').on('click', onGetSessions)
-  $('#sessions-info').on('click', '.delete-session-button', onDeleteSession)
+  $('#sessions-info').on('click', '.delete-session', onDeleteSession)
   $('#entries-button').on('click', sessionSuccess)
+  // $('#projects-info').on('click', '.open-project-button', sessionSuccess)
 }
 
 // NEED TO CREATE NEW FUNCTION FOR CREATING NEW AUTH HANDLERS

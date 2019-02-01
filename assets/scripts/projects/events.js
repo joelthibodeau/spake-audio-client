@@ -5,6 +5,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const sessionsApi = require('../sessions/api.js')
+const sessionsUi = require('../sessions/ui.js')
 
 const onCreateProject = event => {
   event.preventDefault()
@@ -94,11 +96,22 @@ const projectSuccess = function (event) {
     .catch(ui.getProjectsFailure)
 }
 
+const onOpenProject = function (event) {
+  event.preventDefault()
+  const projectId = $(event.target).data('id')
+  console.log('inside onOpenProject', event.target)
+  sessionsApi.getAllSessions(projectId)
+    .then(sessionsUi.getSessionsSuccess)
+    .then(() => $('#sessionEntriesModal').modal('show'))
+    .catch(sessionsUi.getSessionsFailure)
+}
+
 const addProjectHandlers = () => {
   $('#create-project').on('submit', onCreateProject)
   $('#update-project').on('submit', onUpdateProject)
   // $('#delete-project').on('submit', onDeleteProject)
   $('#projects-info').on('click', '.delete-project', onDeleteProject)
+  $('#projects-info').on('click', '.open-project-button', onOpenProject)
   $('#entries-button').on('click', projectSuccess)
 }
 

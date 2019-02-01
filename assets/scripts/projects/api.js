@@ -45,7 +45,7 @@ const updateProject = data => {
 //   })
 // }
 
-// NEW DELETE BOOK FOR HANDLEBARS
+// NEW DELETE Project FOR HANDLEBARS
 const deleteProject = (projectId) => {
   return $.ajax({
     url: config.apiUrl + '/projects/' + projectId,
