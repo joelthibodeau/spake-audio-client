@@ -15,23 +15,24 @@ const onCreateSession = event => {
     .catch(ui.createSessionFailure)
 }
 
-const onUpdateSession = event => {
-  // console.log('got into update-session...about to prevent default')
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  // console.log(data)
-  // console.log('onUpdateSession ran.')
-  // console.log('my session id is ', data.session.id)
-  // console.log('my session date ', data.session.date)
-  // console.log('my session hours worked ', data.session.hours_worked)
-  // console.log('my session id hours recorded ', data.session.hours_recorded)
-  // console.log('my session notes ', data.session.notes)
-  api.updateSession(data)
-    .then(function (response) {
-      ui.updateSessionSuccess(response)
-    })
-    .catch(ui.updateSessionFailure)
-}
+// ORIGINAL onUpdateSession
+// const onUpdateSession = event => {
+//   // console.log('got into update-session...about to prevent default')
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log(data)
+//   console.log('onUpdateSession ran.')
+//   console.log('my session id is ', data.session.id)
+//   console.log('my session date ', data.session.date)
+//   console.log('my session hours worked ', data.session.hours_worked)
+//   console.log('my session id hours recorded ', data.session.hours_recorded)
+//   console.log('my session notes ', data.session.notes)
+//   api.updateSession(data)
+//     .then(function (response) {
+//       ui.updateSessionSuccess(response)
+//     })
+//     .catch(ui.updateSessionFailure)
+// }
 
 // ORIGINAL onDeleteSession
 // const onDeleteSession = event => {
@@ -54,6 +55,17 @@ const onDeleteSession = (event) => {
   const sessionId = $(event.target).closest('tr').data('id')
   console.log(sessionId)
   api.deleteSession(sessionId)
+    .then(() => sessionSuccess(event))
+    .catch(ui.failure)
+}
+
+// NEW NOT WORKING
+const onUpdateSession = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const sessionId = $(event.target).closest('tr').data('id')
+  console.log(sessionId)
+  api.updateSession(data)
     .then(() => sessionSuccess(event))
     .catch(ui.failure)
 }
@@ -91,7 +103,7 @@ const onDeleteSession = (event) => {
 const sessionSuccess = function (event) {
   event.preventDefault()
   console.log('hi')
-  api.getAllSessions()
+  api.getAllProjectSessions()
     .then(ui.getSessionsSuccess)
     .catch(ui.getSessionsFailure)
 }

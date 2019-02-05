@@ -38,23 +38,23 @@ const createSessionFailure = function () {
   emptyMessage()
 }
 
-const updateSessionSuccess = function () {
+const updateSessionSuccess = data => {
   $('#update-session').trigger('reset')
   // close modal on update session success
   $('#updateSessionModal').modal('hide')
   $('.message').text('updated session successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  // console.log('updateSessionSuccess ran. Data is:', data)
+  console.log('updateSessionSuccess ran. Data is:', data)
   emptyMessage()
 }
 
 // change 'error =>' to 'function ()' to prevent linter error
-const updateSessionFailure = function () {
+const updateSessionFailure = error => {
   $('.message').text('error on update session')
   $('.message').attr('class', 'message')
   $('.message').addClass('failure')
-  // console.error('updateSessionFailure ran. Error is :', error)
+  console.error('updateSessionFailure ran. Error is :', error)
   emptyMessage()
 }
 

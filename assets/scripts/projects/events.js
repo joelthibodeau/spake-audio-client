@@ -100,7 +100,7 @@ const onOpenProject = function (event) {
   event.preventDefault()
   const projectId = $(event.target).data('id')
   console.log('inside onOpenProject', event.target)
-  sessionsApi.getAllSessions(projectId)
+  sessionsApi.getAllProjectSessions(projectId)
     .then(sessionsUi.getSessionsSuccess)
     .then(() => $('#sessionEntriesModal').modal('show'))
     .catch(sessionsUi.getSessionsFailure)

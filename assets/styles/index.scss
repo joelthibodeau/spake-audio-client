@@ -76,6 +76,29 @@ body {
   }
 }
 
+.update-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mint-green;
+  border: 1.25px solid $mint-green;
+  border-radius: 4px;
+  color: $darker-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $mint-green;
+    border: 1.25px solid $mint-green;
+    color: $rouge;
+    cursor: pointer;
+  }
+}
+
 .open-project-button {
   // display: flex;
   justify-content: center;
@@ -119,6 +142,17 @@ body {
 .modal-style {
   background-color: $mint-green;
   color: $darker-green;
+}
+
+.update-session-modal {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
 }
 
 .modal-signup-button {
