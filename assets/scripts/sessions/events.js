@@ -59,7 +59,7 @@ const onDeleteSession = (event) => {
     .catch(ui.failure)
 }
 
-// NEW NOT WORKING
+// NEW REFACTORED CTORED UPDATE SESSION
 const onUpdateSession = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)

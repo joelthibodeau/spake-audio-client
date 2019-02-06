@@ -18,21 +18,22 @@ const onCreateProject = event => {
     .catch(ui.createProjectFailure)
 }
 
-const onUpdateProject = event => {
-  // console.log('got into update-project...about to prevent default')
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  // console.log(data)
-  // console.log('onUpdateProject ran.')
-  // console.log('my project id is ', data.project.id)
-  // console.log('my project id name ', data.project.name)
-  // console.log('my project id description ', data.project.description)
-  api.updateProject(data)
-    .then(function (response) {
-      ui.updateProjectSuccess(response)
-    })
-    .catch(ui.updateProjectFailure)
-}
+// OLD UPDATE PROJECT
+// const onUpdateProject = event => {
+//   // console.log('got into update-project...about to prevent default')
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   // console.log(data)
+//   // console.log('onUpdateProject ran.')
+//   // console.log('my project id is ', data.project.id)
+//   // console.log('my project id name ', data.project.name)
+//   // console.log('my project id description ', data.project.description)
+//   api.updateProject(data)
+//     .then(function (response) {
+//       ui.updateProjectSuccess(response)
+//     })
+//     .catch(ui.updateProjectFailure)
+// }
 
 // const onDeleteProject = event => {
 //   event.preventDefault()
@@ -47,6 +48,17 @@ const onUpdateProject = event => {
 //     .then(ui.deleteProjectSuccess) // if your request was succesful
 //     .catch(ui.deleteProjectFailure) // if your request failed
 // }
+
+// NEW UPDATE SESSION
+const onUpdateProject = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const projectId = $(event.target).closest('tr').data('id')
+  console.log(projectId)
+  api.updateProject(data)
+    .then(() => projectSuccess(event))
+    .catch(ui.failure)
+}
 
 // refactored onDeleteProject for handlebars
 const onDeleteProject = (event) => {
