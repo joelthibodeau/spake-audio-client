@@ -81,6 +81,8 @@ const signOutSuccess = data => {
   $('#signed-in').hide()
   $('#signed-out').show()
   $('.message').text('signed out successfully')
+  // clears projects-info data in table
+  $('#projects-info').empty()
   // close modal on sign out success
   $('#signOutModal').modal('hide')
   store.user = {} // or = null

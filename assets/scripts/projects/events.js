@@ -130,5 +130,6 @@ const addProjectHandlers = () => {
 // NEED TO CREATE NEW FUNCTION FOR CREATING NEW AUTH HANDLERS
 
 module.exports = {
-  addProjectHandlers
+  addProjectHandlers,
+  projectSuccess
 }
