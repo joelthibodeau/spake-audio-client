@@ -128,7 +128,7 @@ const addProjectHandlers = () => {
   $('#update-project').on('submit', onUpdateProject)
   // $('#delete-project').on('submit', onDeleteProject)
   $('#projects-info').on('click', '.delete-project', onDeleteProject)
-  $('#projects-info').click('.open-project-button', onOpenProject)
+  $('#projects-info').on('click', '.open-project-button', onOpenProject)
   $('#entries-button').on('click', projectSuccess)
 }
 
