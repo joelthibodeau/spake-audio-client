@@ -7,6 +7,9 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const sessionsApi = require('../sessions/api.js')
 const sessionsUi = require('../sessions/ui.js')
+const store = require('../store.js')
+
+store.projectId = null
 
 const onCreateProject = event => {
   event.preventDefault()
@@ -110,12 +113,14 @@ const projectSuccess = function (event) {
 
 const onOpenProject = function (event) {
   event.preventDefault()
-  const projectId = $(event.target).data('id')
+  store.projectId = $(event.target).data('id')
+  console.log(`the project id at open is ${store.projectId}`)
   console.log('inside onOpenProject', event.target)
-  sessionsApi.getAllProjectSessions(projectId)
+  sessionsApi.getAllProjectSessions(store.projectId)
     .then(sessionsUi.getSessionsSuccess)
     .then(() => $('#sessionEntriesModal').modal('show'))
     .catch(sessionsUi.getSessionsFailure)
+  // return store.projectId
 }
 
 const addProjectHandlers = () => {
@@ -123,7 +128,7 @@ const addProjectHandlers = () => {
   $('#update-project').on('submit', onUpdateProject)
   // $('#delete-project').on('submit', onDeleteProject)
   $('#projects-info').on('click', '.delete-project', onDeleteProject)
-  $('#projects-info').on('click', '.open-project-button', onOpenProject)
+  $('#projects-info').click('.open-project-button', onOpenProject)
   $('#entries-button').on('click', projectSuccess)
 }
 
@@ -131,5 +136,6 @@ const addProjectHandlers = () => {
 
 module.exports = {
   addProjectHandlers,
-  projectSuccess
+  projectSuccess,
+  onOpenProject
 }

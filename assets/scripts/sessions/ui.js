@@ -11,13 +11,14 @@ const emptyMessage = () => {
 }
 
 const getSessionsSuccess = (data) => {
-  console.log('in UI')
+  console.log('%c The data:', 'font-size: 40px; background: #00ff00; color: #000000')
   console.log(data)
   const showSessionsHtml = showSessionsTemplate({ sessions: data.sessions })
   $('#sessions-info').html(showSessionsHtml)
 }
 
 const createSessionSuccess = data => {
+  console.log('%c The code runs!', 'font-size: 40px; background: #00ff00; color: #000000')
   // clears modal form fields.
   $('#create-session').trigger('reset')
   // close modal on create session success

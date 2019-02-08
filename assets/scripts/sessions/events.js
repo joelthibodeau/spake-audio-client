@@ -5,14 +5,30 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+// const projectEvents = require('../projects/events.js')
+const store = require('../store.js')
+
+const getTheStuff = function () {
+  api.getAllProjectSessions(store.projectId)
+    .then(ui.getSessionsSuccess)
+    // .then(() => $('#sessionEntriesModal').modal('show'))
+    .catch(ui.getSessionsFailure)
+}
 
 const onCreateSession = event => {
   event.preventDefault()
+  console.log(`the project id is ${store.projectId}`)
   const data = getFormFields(event.target)
   // console.log('onCreateSession ran.')
   api.createSession(data)
-    .then(ui.createSessionSuccess)
-    .catch(ui.createSessionFailure)
+    .then(getTheStuff)
+    // .then(() => $('#sessionEntriesModal').modal('show'))
+    // .then(projectEvents.onOpenProject)
+    .catch(ui.getSessionsFailure)
+  // api.getAllProjectSessions(store.projectId)
+  //   .then(ui.getSessionsSuccess)
+  //   .then(() => $('#sessionEntriesModal').modal('show'))
+  //   .catch(ui.getSessionsFailure)
 }
 
 // ORIGINAL onUpdateSession
@@ -55,7 +71,8 @@ const onDeleteSession = (event) => {
   const sessionId = $(event.target).closest('tr').data('id')
   console.log(sessionId)
   api.deleteSession(sessionId)
-    .then(() => sessionSuccess(event))
+    .then(getTheStuff)
+    // .then(() => sessionSuccess(event))
     .catch(ui.failure)
 }
 
@@ -66,7 +83,8 @@ const onUpdateSession = (event) => {
   const sessionId = $(event.target).closest('tr').data('id')
   console.log(sessionId)
   api.updateSession(data)
-    .then(() => sessionSuccess(event))
+    .then(getTheStuff)
+    // .then(() => sessionSuccess(event))
     .catch(ui.failure)
 }
 
@@ -115,7 +133,7 @@ const addSessionHandlers = () => {
   // for ORIGINAL GET SESSIONS
   // $('#session-entries-button').on('click', onGetSessions)
   $('#sessions-info').on('click', '.delete-session', onDeleteSession)
-  $('#entries-button').on('click', sessionSuccess)
+  // $('#entries-button').on('click', refreshSessions.onOpenProject)
   // $('#projects-info').on('click', '.open-project-button', sessionSuccess)
 }
 
