@@ -83,7 +83,7 @@ const updateSession = data => {
 }
 
 const getAllProjectSessions = (projectId) => {
-  console.log('inside getAllProjectSessions projectId is', projectId)
+  // console.log('inside getAllProjectSessions projectId is', projectId)
   return $.ajax({
     url: config.apiUrl + '/sessions',
     method: 'GET',

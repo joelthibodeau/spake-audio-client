@@ -105,7 +105,7 @@ const onDeleteProject = (event) => {
 // new function to get Projects for handlebars
 const projectSuccess = function (event) {
   event.preventDefault()
-  console.log('hi')
+  // console.log('hi')
   api.getAllProjects()
     .then(ui.getProjectsSuccess)
     .catch(ui.getProjectsFailure)
