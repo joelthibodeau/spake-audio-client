@@ -233,7 +233,7 @@ input {
   background-color: $dark-putty;
   border: 1.25px solid $dark-putty;
   border-radius: 4px;
-  color: $light-teal;
+  color: $light-green;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 0.8em;
@@ -244,7 +244,7 @@ input {
   &:hover {
     background-color: $dark-putty;
     border: 1.25px solid $dark-putty;
-    color: $bright-teal;
+    color: $darker-green;
     cursor: pointer;
   }
 }
