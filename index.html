@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>SPAKE</title>
+      <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div style="text-align: center;">
+          <h1>SPAKE</h1>
+      </div>
+
+      <div class="buttons-container">
+
+        <!-- SIGNED OUT BUTTONS -->
+        <div id="signed-out">
+          <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signUpModal">sign up</button></span>
+          <span> • </span>
+          <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signInModal">sign in</button></span>
+        </div>
+
+        <!-- SIGNED IN BUTTONS -->
+        <div id="signed-in">
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#newProjectModal">add project</button></span>
+          <span> • </span> -->
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#updateProjectModal">edit project</button></span>
+          <span> • </span> -->
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteProjectModal">delete project</button></span>
+          <span> • </span> -->
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#newSessionModal">add session</button></span>
+          <span> • </span> -->
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#updateSessionModal">edit session</button></span>
+          <span> • </span> -->
+
+          <span><button id="entries-button" type="button" class="menu-buttons">projects</button></span>
+          <span> • </span>
+          <!-- <span><button id="session-entries-button" type="button" class="menu-buttons" data-toggle="modal" data-target="#sessionEntriesModal">sessions</button></span>
+          <span> • </span> -->
+          <!-- <span><button class="menu-buttons" data-toggle="modal" data-target="#deleteSessionModal">delete session</button></span>
+          <span> • </span> -->
+          <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#changePasswordModal">account</button></span>
+          <span> • </span>
+          <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signOutModal">sign out</button></span>
+        </div>
+      </div>
+
+
+        <!-- MODALS -->
+
+      <!-- SIGN UP MODAL BEGINS -->
+        <div class="modal fade" id="signUpModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="signUpModalLabel">sign up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="sign-up">
+                      <fieldset>
+                        <!-- <legend>sign up</legend> -->
+                          <input type="text" name="credentials[email]" placeholder="email">
+                          <input type="password" name="credentials[password]" placeholder="password">
+                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                          <br>
+                          <input type="submit" value="sign up" class="modal-signup-button">
+                      </fieldset>
+                  </form>
+              </div>
+              <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+       <!-- SIGN IN MODAL BEGINS -->
+        <div class="modal fade" id="signInModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="signInModalLabel">sign in</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+             </div>
+                <div class="modal-body mx-3">
+                  <form id="sign-in">
+                    <fieldset>
+                      <!-- <legend>sign in</legend> -->
+                      <i class="fas fa-envelope prefix grey-text"></i>
+                      <input type="text" name="credentials[email]" placeholder="email">
+                      <input type="password" name="credentials[password]" placeholder="password">
+                      <br>
+                      <input type="submit" value="sign in" class="modal-signin">
+                    </fieldset>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHANGE PASSWORD MODAL BEGINS -->
+        <div class="modal fade" id="changePasswordModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="changePasswordModalLabel">change password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+             </div>
+                <div class="modal-body">
+                  <form id="change-password">
+                    <fieldset>
+                      <!-- <legend>change password</legend> -->
+                      <input type="password" name="passwords[old]" placeholder="old password">
+                      <input type="password" name="passwords[new]" placeholder="new password">
+                      <br>
+                      <input type="submit" value="submit" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- SIGN OUT MODAL BEGINS -->
+        <div class="modal fade" id="signOutModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="signOutModalLabel">definitely sign out?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="sign-out">
+                    <fieldset>
+                      <!-- <legend>definitely sign out?</legend> -->
+                      <input type="submit" value="yes" class="modal-buttons">
+                    </fieldset>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CREATE PROJECT MODAL BEGINS -->
+        <div class="modal fade" id="newProjectModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="newProjectModalLabel">new project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="create-project">
+                    <fieldset>
+                      <!-- <legend>new project</legend> -->
+                        <input name="project[name]" type="text"  placeholder="project name">
+                        <input name="project[description]" type="text"  placeholder="project description">
+                        <br>
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPDATE PROJECT MODAL BEGINS -->
+        <div class="modal fade" id="updateProjectModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="updateProjectModalLabel">update project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="update-project">
+                    <fieldset>
+                      <!-- <legend>update project</legend> -->
+                      <input name="project[id]" type="text"  placeholder="ID #">
+                      <input name="project[name]" type="text"  placeholder="project name">
+                      <input name="project[description]" type="text"  placeholder="project description">
+                        <br>
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DELETE PROJECT MODAL BEGINS -->
+        <div class="modal fade" id="deleteProjectModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="deleteProjectModalLabel">delete?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="delete-project">
+                    <fieldset>
+                      <!-- <legend>delete?</legend> -->
+                      <input name="project[id]" type="text"  placeholder="ID #">
+                      <br>
+                      <input type="submit" value="delete" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT ENTRIES MODAL BEGINS -->
+        <!-- <div class="modal fade" id="projectEntriesModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="projectEntriesModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <legend>projects</legend>
+                  <div id='projects-info' class='projects-info'></div>
+               </div>
+
+            </div>
+          </div>
+        </div> -->
+
+        <!-- SESSIONS HERE -->
+
+        <!-- CREATE SESSION MODAL BEGINS -->
+        <div class="modal fade create-session-modal" id="newSessionModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="newSessionModalLabel">new session</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="create-session">
+                    <fieldset>
+                      <!-- <legend>new session</legend> -->
+                        <input name="session[project_id]" type="number" step=".01" placeholder="project id">
+                        <input name="session[date]" type="text" placeholder="date">
+                        <input name="session[hours_worked]" type="number" step="0.01" placeholder="0.00">
+                        <input name="session[hours_recorded]" type="number" step="0.01" placeholder="0.00">
+                        <input name="session[notes]" type="text"  placeholder="notes">
+                        <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPDATE SESSION MODAL BEGINS -->
+        <div class="modal fade update-session-modal" id="updateSessionModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="updateSessionModalLabel">update session</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="update-session">
+                    <fieldset>
+                      <!-- <legend>update session</legend> -->
+                      <input name="session[id]" type="number"  placeholder="session id">
+                      <input name="session[date]" type="text"  placeholder="date">
+                      <input name="session[hours_worked]" type="number" step="0.01" placeholder="0.00">
+                      <input name="session[hours_recorded]" type="number" step="0.01" placeholder="0.00">
+                      <input name="session[notes]" type="text"  placeholder="notes">
+                      <input type="submit" value="save" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORIGINAL SESSION ENTRIES MODAL BEGINS -->
+        <!-- <div class="modal fade" id="sessionEntriesModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="sessionEntriesModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <legend>sessions</legend>
+                  <div id='sessions-info' class='sessions-info'></div>
+               </div>
+
+            </div>
+          </div>
+        </div> -->
+
+        <!-- |||| HANDLEBARS |||| SESSION ENTRIES MODAL BEGINS -->
+        <div class="modal fade" id="sessionEntriesModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="signInModalLabel">sessions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <!-- <legend>sessions</legend> -->
+                  <table id='sessions-info' class='sessions-info sessions-table'></table>
+               </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- DELETE SESSION MODAL BEGINS -->
+        <div class="modal fade" id="deleteSessionModal">
+          <div class="modal-dialog">
+            <div class="modal-content modal-style">
+              <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="deleteSessionModalLabel">delete?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <form id="delete-session">
+                    <fieldset>
+                      <!-- <legend>delete?</legend> -->
+                      <input name="session[id]" type="text"  placeholder="ID #">
+                      <br>
+                      <input type="submit" value="delete" class="modal-buttons">
+                    </fieldset>
+                  </form>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT ENTRIES MODAL BEGINS -->
+        <!-- <div class="modal fade" id="projectEntriesModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="projectEntriesModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <legend>projects</legend>
+                  <div id='projects-info' class='projects-info'></div>
+               </div>
+
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div id='projects-info' class='projects-info'></div> -->
+
+    <br>
+    <div>
+      <table id='projects-info' class='projects-table'>
+      </table>
+      <!-- <table>
+        <tr> <audio controls> <source src="https://dl.dropbox.com/s/c6ihwtuloi1sr3b/SPAKE_sample-1%20%5BR-Dulude%5D.mp3?dl=0" type="audio/mpeg"> </audio> </tr>
+      </table> -->
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id='message' class='message'></div>
+    </body>
+</html>
