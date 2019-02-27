@@ -57,7 +57,7 @@ const onUpdateProject = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const projectId = $(event.target).closest('tr').data('id')
-  console.log(projectId)
+  // console.log(projectId)
   api.updateProject(data)
     .then(() => projectSuccess(event))
     .catch(ui.failure)
@@ -67,7 +67,7 @@ const onUpdateProject = (event) => {
 const onDeleteProject = (event) => {
   event.preventDefault()
   const projectId = $(event.target).closest('tr').data('id')
-  console.log(projectId)
+  // console.log(projectId)
   api.deleteProject(projectId)
     .then(() => projectSuccess(event))
     .catch(ui.failure)
@@ -114,8 +114,8 @@ const projectSuccess = function (event) {
 const onOpenProject = function (event) {
   event.preventDefault()
   store.projectId = $(event.target).data('id')
-  console.log(`the project id at open is ${store.projectId}`)
-  console.log('inside onOpenProject', event.target)
+  // console.log(`the project id at open is ${store.projectId}`)
+  // console.log('inside onOpenProject', event.target)
   sessionsApi.getAllProjectSessions(store.projectId)
     .then(sessionsUi.getSessionsSuccess)
     .then(() => $('#sessionEntriesModal').modal('show'))

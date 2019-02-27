@@ -11,8 +11,8 @@ const emptyMessage = () => {
 }
 
 const getProjectsSuccess = (data) => {
-  console.log('in UI')
-  console.log(data)
+  // console.log('in UI')
+  // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('#projects-info').html(showProjectsHtml)
 }
@@ -65,7 +65,7 @@ const deleteProjectSuccess = data => {
   $('.message').text('delete project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  console.log('deleteProjectSuccess ran.')
+  // console.log('deleteProjectSuccess ran.')
   emptyMessage()
 }
 

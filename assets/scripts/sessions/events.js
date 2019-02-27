@@ -17,7 +17,7 @@ const getTheStuff = function () {
 
 const onCreateSession = event => {
   event.preventDefault()
-  console.log(`the project id is ${store.projectId}`)
+  // console.log(`the project id is ${store.projectId}`)
   const data = getFormFields(event.target)
   // console.log('onCreateSession ran.')
   api.createSession(data)
@@ -69,19 +69,19 @@ const onCreateSession = event => {
 const onDeleteSession = (event) => {
   event.preventDefault()
   const sessionId = $(event.target).closest('tr').data('id')
-  console.log(sessionId)
+  // console.log(sessionId)
   api.deleteSession(sessionId)
     .then(getTheStuff)
     // .then(() => sessionSuccess(event))
     .catch(ui.failure)
 }
 
-// NEW REFACTORED CTORED UPDATE SESSION
+// NEW REFACTORED UPDATE SESSION
 const onUpdateSession = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const sessionId = $(event.target).closest('tr').data('id')
-  console.log(sessionId)
+  // console.log(sessionId)
   api.updateSession(data)
     .then(getTheStuff)
     // .then(() => sessionSuccess(event))
@@ -120,7 +120,7 @@ const onUpdateSession = (event) => {
 // new function to get Sessions for handlebars
 const sessionSuccess = function (event) {
   event.preventDefault()
-  console.log('hi')
+  // console.log('hi')
   api.getAllProjectSessions()
     .then(ui.getSessionsSuccess)
     .catch(ui.getSessionsFailure)
