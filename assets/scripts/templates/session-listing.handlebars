@@ -1,0 +1,29 @@
+<tr>
+  <th>id</th>
+  <th>date</th>
+  <th>hrs worked</th>
+  <th>hrs recorded</th>
+  <th>notes</th>
+  <th>
+    <button class="new-session-button" data-toggle="modal" data-target="#newSessionModal">new session</button>
+  </th>
+
+</tr>
+
+{{#each sessions as |session|}}
+  {{log session}}
+
+
+      <tr data-id="{{session.id}}">
+        <td data-id="{{session.id}}"> <small>{{ session.id }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.date }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.hours_worked_readable }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.hours_recorded_readable }}</small> </td>
+        <td data-id="{{session.id}}"> <small>{{ session.notes }}</small> </td>
+        <td>
+          <button type="submit" class="update-session-button update-session" data-toggle="modal" data-target="#updateSessionModal">edit</button> /
+          <button type="submit" class="delete-session-button delete-session">delete</button>
+        </td>
+      </tr>
+new-sess
+{{/each}}

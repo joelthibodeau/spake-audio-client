@@ -10,16 +10,25 @@ $failure-red: #f00;
 $success-green: #008000;
 
 $lighter-green: #d5e5d1;
-// $dark-putty: #686256;
+$dark-putty: #686256;
+$light-putty: #c2c0bb;
 $orange-red: #c1502e;
-// $dim-teal: #587e76;
-// $rouge: #a96e5b;
+$dim-teal: #587e76;
+$dark-teal: #4f716a;
+$light-teal: #8aa49f;
+$bright-teal: #587e63;
+$rouge: #a96e5b;
+$white-smoke: #f5f5f5;
 
 body {
-  background-color: #eaf2e8;
-  color: #2e7e19;
+  background-color: $dark-putty;
+  color: $black;
   font-family: 'Questrial', sans-serif;
   margin-top: 45px;
+}
+
+input {
+  background-color: $white-smoke;
 }
 
 .buttons-container {
@@ -30,50 +39,83 @@ body {
 }
 
 .menu-buttons {
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $darker-green;
-  border: solid $darker-green;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
   border-radius: 4px;
-  color: $mint-green;
+  color: $white-smoke;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
   // margin: 12px;
   outline: none !important;
+  padding: 1.5px 5px;
   // padding: 20px;
 
   &:hover {
-    background-color: $light-green;
-    border: solid $light-green;
-    color: $mint-green;
+    background-color: $dark-putty;
+    // border: 1.25px solid $rouge;
+    color: $orange-red;
     cursor: pointer;
   }
 }
 
-.message {
-  // display: none;
-  color: $mint-green;
+.new-project-button {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $light-green;
+  display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
-  padding: 25px;
+  // margin: 12px;
+  outline: none !important;
+  padding: 1.5px 5px;
   text-align: center;
+  // padding: 20px;
 
-  &.success {
+  &:hover {
+    background-color: $dark-putty;
+    // border: 1.25px solid $rouge;
     color: $darker-green;
-  }
-
-  &.failure {
-    color: $failure-red;
+    cursor: pointer;
   }
 }
 
-.modal-signup {
-  background-color: $darker-green;
-  border: solid $mint-green;
+.new-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
+  border-radius: 4px;
+  color: $darker-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  padding: 1.5px 5px;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $white-smoke;
+    // border: 1.25px solid $rouge;
+    color: $light-green;
+    cursor: pointer;
+  }
+}
+
+.modal-buttons {
+  background-color: $dim-teal;
+  border: solid $white-smoke;
   border-radius: 8px;
-  color: $mint-green;
+  color: $white-smoke;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
@@ -83,20 +125,343 @@ body {
   width: 75px;
 
   &:hover {
-    background-color: $lighter-green;
-    border: solid $lighter-green;
+    background-color: $rouge;
+    border: solid $white-smoke;
     border-radius: 8px;
-    color: $mint-green;
+    color: $white-smoke;
     cursor: pointer;
     width: 75px;
   }
 }
 
-// .big-modal {
-//   margin-left: -40%;
-//   width: 80%;
-// }
+.delete-project-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $rouge;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $orange-red;
+    cursor: pointer;
+  }
+}
+
+.delete-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
+  border-radius: 4px;
+  color: $orange-red;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $white-smoke;
+    border: 1.25px solid $white-smoke;
+    color: $rouge;
+    cursor: pointer;
+  }
+}
+
+.update-project-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $light-teal;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $bright-teal;
+    cursor: pointer;
+  }
+}
+
+.update-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
+  border-radius: 4px;
+  color: $dim-teal;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $white-smoke;
+    border: 1.25px solid $white-smoke;
+    color: $black;
+    cursor: pointer;
+  }
+}
+
+.open-project-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $light-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $darker-green;
+    cursor: pointer;
+  }
+}
+
+.message {
+  // display: none;
+  color: $dark-putty;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  padding: 25px;
+  text-align: center;
+
+  &.success {
+    color: $success-green;
+  }
+
+  &.failure {
+    color: $failure-red;
+  }
+}
+
+.modal-style {
+  background-color: $white-smoke;
+  color: $dark-putty;
+}
+
+.update-session-modal {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.create-session-modal {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.modal-signup-button {
+  background-color: $dark-putty;
+  border: solid $dark-putty;
+  border-radius: 8px;
+  color: $white-smoke;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+  width: 75px;
+
+  &:hover {
+    background-color: $dim-teal;
+    border: solid $dim-teal;
+    border-radius: 8px;
+    color: $white-smoke;
+    cursor: pointer;
+    width: 75px;
+  }
+}
+
+.modal-signin {
+  background-color: $dim-teal;
+  border: solid $white-smoke;
+  border-radius: 8px;
+  color: $white-smoke;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+  width: 75px;
+
+  &:hover {
+    background-color: $rouge;
+    border: solid $white-smoke;
+    border-radius: 8px;
+    color: $white-smoke;
+    cursor: pointer;
+    width: 75px;
+  }
+}
 
 .modal-lg {
   max-width: 60%;
+}
+
+// ||||||||||||||||| PROJECTS TABLE |||||||||||||||||
+
+.projects-table {
+  // border: solid 1px $darker-green;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+  width: 75%;
+  // display: flex;
+  // font: normal 13px Arial, sans-serif;
+}
+
+.projects-table thead th {
+  background-color: $dark-putty;
+  border: solid 1px $black;
+  color: $black;
+  display: flex;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  // text-shadow: 1px 1px 1px #fff;
+}
+
+.projects-table tbody td {
+  border: solid 1px $black;
+  color: $black;
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  // text-shadow: 1px 1px 1px #fff;
+}
+
+.sessions-table {
+  // border: 1px solid $dark-putty;
+  border: none;
+  border-collapse: collapse;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sessions-table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+.sessions-table tr {
+  background-color: $white-smoke;
+  border: 1px solid $dark-putty;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 0.35em;
+}
+
+.sessions-table th,
+.sessions-table td {
+  padding: 0.625em;
+  text-align: left;
+}
+
+.sessions-table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  // text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .sessions-table {
+    border: 0;
+  }
+
+  .sessions-table caption {
+    font-size: 1.3em;
+  }
+
+  .sessions-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .sessions-table tr {
+    border-bottom: 3px solid $dark-putty;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .sessions-table td {
+    border-bottom: 1px solid $dark-putty;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .sessions-table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);.
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .sessions-table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: $light-putty;
+  border: solid $dark-putty 1px;
+  width: 250px;
 }

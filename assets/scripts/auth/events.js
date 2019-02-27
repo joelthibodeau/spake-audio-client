@@ -20,6 +20,7 @@ const onSignIn = event => {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(ui.getProjectsSuccess)
     .catch(ui.signInFailure)
 }
 

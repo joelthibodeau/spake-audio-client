@@ -2,10 +2,19 @@
 
 // const store = require('../store.js')
 
+const showProjectsTemplate = require('../templates/project-listing.handlebars')
+
 const emptyMessage = () => {
   setTimeout(function () {
     $('.message').text('')
   }, 3000)
+}
+
+const getProjectsSuccess = (data) => {
+  console.log('in UI')
+  console.log(data)
+  const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
+  $('#projects-info').html(showProjectsHtml)
 }
 
 const createProjectSuccess = data => {
@@ -56,7 +65,7 @@ const deleteProjectSuccess = data => {
   $('.message').text('delete project successfully')
   $('.message').attr('class', 'message')
   $('.message').addClass('success')
-  // console.log('deleteProjectSuccess ran.')
+  console.log('deleteProjectSuccess ran.')
   emptyMessage()
 }
 
@@ -70,6 +79,7 @@ const deleteProjectFailure = function () {
 }
 
 module.exports = {
+  getProjectsSuccess,
   createProjectSuccess,
   createProjectFailure,
   updateProjectSuccess,
