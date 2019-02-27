@@ -10,20 +10,21 @@ $failure-red: #f00;
 $success-green: #008000;
 
 $lighter-green: #d5e5d1;
-// $dark-putty: #686256;
+$dark-putty: #686256;
 $orange-red: #c1502e;
-// $dim-teal: #587e76;
+$dim-teal: #587e76;
 $rouge: #a96e5b;
+$white-smoke: #f5f5f5;
 
 body {
-  background-color: #eaf2e8;
-  color: #2e7e19;
+  background-color: $dark-putty;
+  color: $black;
   font-family: 'Questrial', sans-serif;
   margin-top: 45px;
 }
 
 input {
-  background-color: #eaf2e8;
+  background-color: $white-smoke;
 }
 
 .buttons-container {
@@ -37,8 +38,56 @@ input {
   // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $mint-green;
-  border: 1.25px solid $darker-green;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $white-smoke;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  padding: 1.5px 5px;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $dark-putty;
+    // border: 1.25px solid $rouge;
+    color: $orange-red;
+    cursor: pointer;
+  }
+}
+
+.new-project-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
+  border-radius: 4px;
+  color: $light-green;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  padding: 1.5px 5px;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $dark-putty;
+    // border: 1.25px solid $rouge;
+    color: $darker-green;
+    cursor: pointer;
+  }
+}
+
+.new-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
   border-radius: 4px;
   color: $darker-green;
   display: inline-block;
@@ -50,10 +99,33 @@ input {
   // padding: 20px;
 
   &:hover {
-    background-color: $mint-green;
-    border: 1.25px solid $rouge;
-    color: $rouge;
+    background-color: $white-smoke;
+    // border: 1.25px solid $rouge;
+    color: $light-green;
     cursor: pointer;
+  }
+}
+
+.modal-buttons {
+  background-color: $dim-teal;
+  border: solid $white-smoke;
+  border-radius: 8px;
+  color: $white-smoke;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+  width: 75px;
+
+  &:hover {
+    background-color: $rouge;
+    border: solid $white-smoke;
+    border-radius: 8px;
+    color: $white-smoke;
+    cursor: pointer;
+    width: 75px;
   }
 }
 
@@ -61,10 +133,10 @@ input {
   // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $mint-green;
-  border: 1.25px solid $mint-green;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
   border-radius: 4px;
-  color: $darker-green;
+  color: $orange-red;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 0.8em;
@@ -73,8 +145,31 @@ input {
   // padding: 20px;
 
   &:hover {
-    background-color: $mint-green;
-    border: 1.25px solid $mint-green;
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $rouge;
+    cursor: pointer;
+  }
+}
+
+.delete-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
+  border-radius: 4px;
+  color: $orange-red;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $white-smoke;
+    border: 1.25px solid $white-smoke;
     color: $rouge;
     cursor: pointer;
   }
@@ -84,10 +179,10 @@ input {
   // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $mint-green;
-  border: 1.25px solid $mint-green;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
   border-radius: 4px;
-  color: $darker-green;
+  color: $white-smoke;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 0.8em;
@@ -96,9 +191,32 @@ input {
   // padding: 20px;
 
   &:hover {
-    background-color: $mint-green;
-    border: 1.25px solid $mint-green;
-    color: $rouge;
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $orange-red;
+    cursor: pointer;
+  }
+}
+
+.update-session-button {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-smoke;
+  border: 1.25px solid $white-smoke;
+  border-radius: 4px;
+  color: $dim-teal;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $white-smoke;
+    border: 1.25px solid $white-smoke;
+    color: $black;
     cursor: pointer;
   }
 }
@@ -107,10 +225,10 @@ input {
   // display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $mint-green;
-  border: 1.25px solid $mint-green;
+  background-color: $dark-putty;
+  border: 1.25px solid $dark-putty;
   border-radius: 4px;
-  color: $darker-green;
+  color: $white-smoke;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 0.8em;
@@ -119,23 +237,23 @@ input {
   // padding: 20px;
 
   &:hover {
-    background-color: $mint-green;
-    border: 1.25px solid $mint-green;
-    color: $light-green;
+    background-color: $dark-putty;
+    border: 1.25px solid $dark-putty;
+    color: $orange-red;
     cursor: pointer;
   }
 }
 
 .message {
   // display: none;
-  color: $mint-green;
+  color: $dark-putty;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
   padding: 25px;
   text-align: center;
 
   &.success {
-    color: $darker-green;
+    color: $success-green;
   }
 
   &.failure {
@@ -144,8 +262,8 @@ input {
 }
 
 .modal-style {
-  background-color: $mint-green;
-  color: $darker-green;
+  background-color: $white-smoke;
+  color: $dark-putty;
 }
 
 .update-session-modal {
@@ -171,10 +289,10 @@ input {
 }
 
 .modal-signup-button {
-  background-color: $darker-green;
-  border: solid $mint-green;
+  background-color: $dark-putty;
+  border: solid $dark-putty;
   border-radius: 8px;
-  color: $mint-green;
+  color: $white-smoke;
   display: inline-block;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
@@ -184,14 +302,60 @@ input {
   width: 75px;
 
   &:hover {
-    background-color: $lighter-green;
-    border: solid $lighter-green;
+    background-color: $dim-teal;
+    border: solid $dim-teal;
     border-radius: 8px;
-    color: $mint-green;
+    color: $white-smoke;
     cursor: pointer;
     width: 75px;
   }
 }
+
+.modal-signin {
+  background-color: $dim-teal;
+  border: solid $white-smoke;
+  border-radius: 8px;
+  color: $white-smoke;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  // margin: 12px;
+  outline: none !important;
+  // padding: 20px;
+  width: 75px;
+
+  &:hover {
+    background-color: $rouge;
+    border: solid $white-smoke;
+    border-radius: 8px;
+    color: $white-smoke;
+    cursor: pointer;
+    width: 75px;
+  }
+}
+
+// .modal-change-password {
+//   background-color: $achromatomaly;
+//   border: solid $achromatomaly;
+//   border-radius: 4px;
+//   color: $dim-grey;
+//   display: inline-block;
+//   font-family: 'Questrial', sans-serif;
+//   font-size: 15px;
+//   // margin: 12px;
+//   outline: none !important;
+//   // padding: 20px;
+//   width: 75px;
+//
+//   &:hover {
+//     background-color: $achromatomaly;
+//     border: solid $achromatomaly;
+//     border-radius: 4px;
+//     color: $white-smoke;
+//     cursor: pointer;
+//     width: 75px;
+//   }
+// }
 
 // .big-modal {
 //   margin-left: -40%;
@@ -215,9 +379,9 @@ input {
 }
 
 .projects-table thead th {
-  background-color: $mint-green;
-  border: solid 1px $darker-green;
-  color: $darker-green;
+  background-color: $dark-putty;
+  border: solid 1px $black;
+  color: $black;
   display: flex;
   padding: 10px;
   text-align: left;
@@ -226,8 +390,8 @@ input {
 }
 
 .projects-table tbody td {
-  border: solid 1px $darker-green;
-  color: $mint-green;
+  border: solid 1px $black;
+  color: $black;
   display: flex;
   padding: 10px;
   width: 100%;
@@ -235,7 +399,7 @@ input {
 }
 
 .sessions-table {
-  border: 1px solid $mint-green;
+  border: 1px solid $dark-putty;
   border-collapse: collapse;
   border-radius: 15px;
   margin: 0;
@@ -250,8 +414,8 @@ input {
 }
 
 .sessions-table tr {
-  background-color: $mint-green;
-  border: 1px solid $darker-green;
+  background-color: $white-smoke;
+  border: 1px solid $dark-putty;
   border-left-style: none;
   border-right-style: none;
   padding: 0.35em;
@@ -290,13 +454,13 @@ input {
   }
 
   .sessions-table tr {
-    border-bottom: 3px solid $darker-green;
+    border-bottom: 3px solid $dark-putty;
     display: block;
     margin-bottom: 0.625em;
   }
 
   .sessions-table td {
-    border-bottom: 1px solid $darker-green;
+    border-bottom: 1px solid $dark-putty;
     display: block;
     font-size: 0.8em;
     text-align: right;
@@ -316,11 +480,6 @@ input {
   .sessions-table td:last-child {
     border-bottom: 0;
   }
-}
-
-.player-container audio::-webkit-media-controls-panel {
-  background-color: $mint-green;
-  color: $darker-green;
 }
 
 // |||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -354,7 +513,7 @@ input {
 // }
 
 .sessions-table {
-  border: 1px solid $mint-green;
+  border: 1px solid $black;
   border-collapse: collapse;
   border-radius: 15px;
   margin: 0;
@@ -369,8 +528,8 @@ input {
 }
 
 .sessions-table tr {
-  background-color: $mint-green;
-  border: 1px solid $darker-green;
+  background-color: $white-smoke;
+  border: 1px solid $dark-putty;
   border-left-style: none;
   border-right-style: none;
   padding: 0.35em;
@@ -409,13 +568,13 @@ input {
   }
 
   table tr {
-    border-bottom: 3px solid $darker-green;
+    border-bottom: 3px solid $dark-putty;
     display: block;
     margin-bottom: 0.625em;
   }
 
   table td {
-    border-bottom: 1px solid $darker-green;
+    border-bottom: 1px solid $dark-putty;
     display: block;
     font-size: 0.8em;
     text-align: right;
@@ -437,7 +596,12 @@ input {
   }
 }
 
-.player-container audio::-webkit-media-controls-panel {
-  background-color: $mint-green;
-  color: $darker-green;
-}
+// .player-container audio::-webkit-media-controls-panel {
+//   background-color: $dark-putty;
+//   color: $black;
+// }
+
+// .player-container audio::-webkit-media-controls-panel {
+//   background-color: $dark-putty;
+//   color: $black;
+// }

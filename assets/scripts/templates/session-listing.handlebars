@@ -5,7 +5,7 @@
   <th>hrs recorded</th>
   <th>notes</th>
   <th>
-    <button class="menu-buttons" data-toggle="modal" data-target="#newSessionModal">new session</button>
+    <button class="new-session-button" data-toggle="modal" data-target="#newSessionModal">new session</button>
   </th>
 
 </tr>
@@ -21,9 +21,9 @@
         <td data-id="{{session.id}}"> <small>{{ session.hours_recorded_readable }}</small> </td>
         <td data-id="{{session.id}}"> <small>{{ session.notes }}</small> </td>
         <td>
-          <button type="submit" class="update-button update-session" data-toggle="modal" data-target="#updateSessionModal">edit</button> /
-          <button type="submit" class="delete-button delete-session">delete</button>
+          <button type="submit" class="update-session-button update-session" data-toggle="modal" data-target="#updateSessionModal">edit</button> /
+          <button type="submit" class="delete-session-button delete-session">delete</button>
         </td>
       </tr>
-
+new-sess
 {{/each}}
